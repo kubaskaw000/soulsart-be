@@ -1,0 +1,11 @@
+.button {
+  padding: 10px 20px;
+  background: linear-gradient(121deg, #00f2ff, #00ff8a);
+  color: black;
+  border: none;
+  cursor: pointer;
+
+  &--clear{
+    background: none;
+  }
+}

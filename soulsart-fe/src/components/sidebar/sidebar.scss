@@ -1,0 +1,50 @@
+.sidebar {
+  width: 72px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 100;
+  grid-area: sidebar;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  transition: 0.5s;
+  text-align: left;
+  border-right: 1px solid #212121;
+  border-top: 1px solid #212121;
+
+  &__item {
+    padding: 10px 20px;
+    color: #c9cacf;
+    display: flex;
+    overflow: hidden;
+    gap: 15px;
+
+    &:hover {
+      background-color: #212121;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    z-index: 66;
+  }
+
+  &--wide {
+    transition: width 0.5s;
+    width: 300px;
+  }
+
+  &__switch {
+    width: 30px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 20px;
+  }
+}
