@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Footer } from "./components/footer/footer.tsx";
 import { setSidebarOpen } from "./store/appSlice.ts";
 import { Navbar } from "./components/navbar/navbar.tsx";
-import { DefaultLayout } from "./layouts/default-layout/default-layout.tsx";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <DefaultLayout />
+      <Outlet />
       <Footer />
       <Modal
         onModalClose={() => dispatch(setSidebarOpen(false))}

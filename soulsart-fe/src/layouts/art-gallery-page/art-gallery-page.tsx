@@ -1,8 +1,3 @@
-import { setSidebarOpen } from "../../store/appSlice.ts";
-import { useDispatch } from "react-redux";
-import "./default-layout.scss";
-import { Header } from "../../components/header/header.tsx";
-import { Sidebar } from "../../components/sidebar/sidebar.tsx";
 import { useNavigate } from "react-router-dom";
 
 const exampleImages = [
@@ -31,28 +26,21 @@ const exampleImages = [
   "https://picsum.photos/200/240",
 ];
 
-export const DefaultLayout = () => {
-  const dispatch = useDispatch();
+export const ArtGalleryPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="default-layout">
-      <Sidebar />
-      <div onClick={() => dispatch(setSidebarOpen(false))} className="content">
-        <Header />
-        <div className="content__images">
-          {exampleImages.map((image, index) => (
-            <img
-              onClick={() => {
-                navigate(`/art/${index}`);
-              }}
-              key={index}
-              src={image}
-              alt="example"
-            />
-          ))}
-        </div>
-      </div>
+    <div className="content__images">
+      {exampleImages.map((image, index) => (
+        <img
+          onClick={() => {
+            navigate(`/art/${index}`);
+          }}
+          key={index}
+          src={image}
+          alt="example"
+        />
+      ))}
     </div>
   );
 };
