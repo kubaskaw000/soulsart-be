@@ -6,7 +6,7 @@
   height: 120px;
   font-size: 10px;
   top: 0;
-  background-color: #161a1f;
-  border-bottom: 1px solid #212121;
+  background-color: var(--col-header-bg);
+  border-bottom: var(--elements-outline-border);
   color: white;
 }

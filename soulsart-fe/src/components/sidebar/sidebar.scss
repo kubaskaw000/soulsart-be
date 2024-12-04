@@ -1,5 +1,7 @@
+@import "../../assets/scss/_mixins";
+
 .sidebar {
-  width: 72px;
+  width: 0;
   height: 100%;
   background-color: black;
   position: fixed;
@@ -12,8 +14,14 @@
   color: #fff;
   transition: 0.5s;
   text-align: left;
-  border-right: 1px solid #212121;
-  border-top: 1px solid #212121;
+  border-right: var(--col-bg);
+  border-top: var(--col-bg);
+
+  @include md {
+    width: 72px;
+    border-right: var(--elements-outline-border);
+    border-top: var(--elements-outline-border);
+  }
 
   &__item {
     padding: 10px 20px;
@@ -21,6 +29,9 @@
     display: flex;
     overflow: hidden;
     gap: 15px;
+
+    @include md {
+    }
 
     &:hover {
       background-color: #212121;
@@ -36,11 +47,15 @@
 
   &--wide {
     transition: width 0.5s;
-    width: 300px;
+    width: 100%;
+
+    @include md {
+      width: 300px;
+    }
   }
 
   &__switch {
-    width: 30px;
+    min-width: 30px;
     height: 30px;
     color: white;
     cursor: pointer;

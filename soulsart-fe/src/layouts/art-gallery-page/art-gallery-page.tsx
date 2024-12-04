@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./art-gallery-page.scss";
 
 const exampleImages = [
   "https://picsum.photos/200/200",
@@ -30,9 +31,10 @@ export const ArtGalleryPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="content__images">
+    <div className="art-gallery-page__images">
       {exampleImages.map((image, index) => (
         <img
+          className="art-gallery-page__image"
           onClick={() => {
             navigate(`/art/${index}`);
           }}

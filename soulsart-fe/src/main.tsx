@@ -4,10 +4,10 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store.ts";
-import "./index.css";
 import { LoginPage } from "./views/login-page/login-page.tsx";
 import { SingleArtPage } from "./layouts/single-art-page/single-art-page.tsx";
 import { DefaultLayout } from "./layouts/default-layout/default-layout.tsx";
+import "@assets/scss/global.scss";
 
 const router = createBrowserRouter([
   {

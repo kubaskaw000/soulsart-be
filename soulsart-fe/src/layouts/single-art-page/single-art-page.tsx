@@ -14,7 +14,7 @@ export const SingleArtPage = () => {
   return (
     <div className="single-art-page">
       <div className="parent">
-        <Button onClick={() => navigate(-1)}>Home</Button>
+        {/*<Button onClick={() => navigate(-1)}>Home</Button>*/}
         {isSideBarOpen && <Sidebar />}
         <div className="div1 single-art-page__art-image-container">
           <PhotoProvider>
@@ -38,7 +38,7 @@ export const SingleArtPage = () => {
               <div className="art-details__art-basic-info">
                 <div>art title</div>
                 <div>by: autor</div>
-                <div>published: data </div>
+                <div>published: data</div>
               </div>
             </div>
             <div className="art-details__art-statistics">
@@ -46,7 +46,6 @@ export const SingleArtPage = () => {
               <div>10 comments</div>
               <div>10 views</div>
             </div>
-
             <div>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -59,7 +58,7 @@ export const SingleArtPage = () => {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
             </div>
-            <div> comments section </div>
+            <div> comments section</div>
           </div>
         </div>
         <div className="div2">

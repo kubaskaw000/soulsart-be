@@ -1,3 +1,5 @@
+@import "../../assets/scss/_mixins";
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -7,14 +9,18 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: black;
-  border-bottom: 1px solid #212121;
+  background-color: var(--col-bg);
+  border-bottom: var(--col-header-bg);
 
   &__right {
     display: flex;
     gap: 2em;
     align-items: center;
-    padding-right: 30px;
+
+    @include md {
+      padding-right: 30px;
+    }
+
     color: white;
 
     &__button {

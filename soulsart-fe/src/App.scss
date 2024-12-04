@@ -1,52 +1,9 @@
+@import "@assets/scss/_mixins";
+
 .app {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: black;
-
-  &__content {
-    display: grid;
-    grid-template-columns: 72px auto;
-    grid-template-areas: "sidebar body";
-  }
-}
-
-.content {
-  grid-area: body;
-  display: flex;
-  flex-direction: column;
-  z-index: 55;
-  width: 100%;
-  height: calc(100% - 60px);
-
-  &__images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 30px;
-  }
-}
-
-.footer {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  bottom: 0;
-  z-index: 100;
-  background-color: white;
-  border-top: 1px solid #212121;
-
-  &__button {
-    padding: 10px 20px;
-    background-color: #74fc9a;
-    color: black;
-    border: none;
-    cursor: pointer;
-  }
 }

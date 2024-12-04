@@ -1,10 +1,15 @@
+@import "../../assets/scss/_mixins";
+
 .single-art-page {
   display: flex;
   flex-direction: column;
 
   &__art-image-container {
-    padding: 0 100px;
-    height: 500px;
+    padding: 0 10px;
+    @include md {
+      padding: 0 100px;
+      height: 500px;
+    }
   }
 
   &__art-image {
@@ -15,8 +20,6 @@
 }
 
 .art-details {
-  padding: 50px 200px;
-
   &__header-info {
     display: flex;
     gap: 20px;
@@ -33,21 +36,30 @@
 }
 
 .parent {
-  display: grid;
-  grid-template-columns: fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: ". .";
+  display: block;
+
+  @include md {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+  }
 }
 
 .div1 {
   margin-top: 30px;
   grid-area: 1 / 1 / 2 / 2;
 }
+
 .div2 {
-  grid-area: 1 / 2 / 2 / 3;
-  max-width: 300px;
-  min-width: 300px;
-  height: 100dvh;
-  background: #1a1a1a;
+  display: none;
+
+  @include md {
+    display: grid;
+    grid-area: 1 / 2 / 2 / 3;
+    max-width: 300px;
+    min-width: 300px;
+    height: 100dvh;
+    background: #1a1a1a;
+  }
 }

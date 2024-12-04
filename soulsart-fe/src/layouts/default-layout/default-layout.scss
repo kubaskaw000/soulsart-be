@@ -1,5 +1,19 @@
+@import "@assets/scss/_mixins";
+
 .default-layout {
   display: grid;
-  grid-template-columns: 72px auto;
   grid-template-areas: "sidebar body";
+
+  @include md {
+    grid-template-columns: 72px auto;
+  }
+
+  &__content {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    z-index: 55;
+    width: 100%;
+    height: calc(100% - 60px);
+  }
 }
