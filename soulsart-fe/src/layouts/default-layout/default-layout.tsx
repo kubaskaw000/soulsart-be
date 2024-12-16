@@ -1,4 +1,4 @@
-import { setSidebarOpen } from "../../store/appSlice.ts";
+import { setSidebarOpen } from "../../store/app-slice.ts";
 import { useDispatch } from "react-redux";
 import "./default-layout.scss";
 import { Header } from "../../components/header/header.tsx";

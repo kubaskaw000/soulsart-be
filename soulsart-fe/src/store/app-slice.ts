@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "./store.ts";
 
 export interface AppState {
   isSidebarOpen: boolean;
@@ -9,7 +10,7 @@ const initialState: AppState = {
   isSidebarOpen: false,
 };
 
-export const appSlice = createSlice({
+const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
@@ -20,5 +21,6 @@ export const appSlice = createSlice({
 });
 
 export const { setSidebarOpen } = appSlice.actions;
-
-export default appSlice.reducer;
+export const isSidebarOpen = (state: RootState) =>
+  state.appReducer.isSidebarOpen;
+export const appReducer = appSlice.reducer;

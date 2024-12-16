@@ -2,6 +2,8 @@ import { clsx } from "clsx";
 import "./sidebar.scss";
 import HomeIcon from "../../assets/HomeIcon.svg?react";
 import { useSelector } from "react-redux";
+import { useAppSelector } from "../../store/store.ts";
+import { isSidebarOpen } from "../../store/app-slice.ts";
 
 type sideBarItemType = {
   content?: string;
@@ -14,7 +16,7 @@ const sideBarItems: sideBarItemType[] = [
 ];
 
 export const Sidebar = () => {
-  const isSideBarOpen = useSelector((state) => state.app.isSidebarOpen);
+  const isSideBarOpen = useAppSelector(isSidebarOpen);
 
   return (
     <div className={clsx("sidebar", isSideBarOpen && "sidebar--wide")}>

@@ -1,33 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./store.ts";
-import { LoginPage } from "./views/login-page/login-page.tsx";
-import { SingleArtPage } from "./layouts/single-art-page/single-art-page.tsx";
-import { DefaultLayout } from "./layouts/default-layout/default-layout.tsx";
+import { store } from "./store/store.ts";
 import "@assets/scss/global.scss";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { path: "", element: <DefaultLayout /> },
-      {
-        path: "/art/:id",
-        element: <SingleArtPage />,
-      },
-    ],
-  },
-  { path: "/login", element: <LoginPage /> },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
 );

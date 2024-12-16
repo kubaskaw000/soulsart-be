@@ -1,20 +1,21 @@
 import { Sidebar } from "../../components/sidebar/sidebar.tsx";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "./single-art-page.scss";
 import { Button } from "../../components/button/button.tsx";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { useAppSelector } from "../../store/store.ts";
+import { isSidebarOpen } from "../../store/app-slice.ts";
 
 export const SingleArtPage = () => {
   const navigate = useNavigate();
-  const isSideBarOpen = useSelector((state) => state.app.isSidebarOpen);
+  const isSideBarOpen = useAppSelector(isSidebarOpen);
   //TODO fetch art data
 
   return (
     <div className="single-art-page">
       <div className="parent">
-        {/*<Button onClick={() => navigate(-1)}>Home</Button>*/}
+        <Button onClick={() => navigate(-1)}>Home</Button>
         {isSideBarOpen && <Sidebar />}
         <div className="div1 single-art-page__art-image-container">
           <PhotoProvider>
