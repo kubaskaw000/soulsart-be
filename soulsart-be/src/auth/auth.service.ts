@@ -10,15 +10,27 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async signIn(signInDto): Promise<{ access_token: string }> {
+  async signIn(signInDto, response): Promise<{ access_token: string; userId }> {
     const user = await this.usersService.findOne(signInDto.email);
 
     if (user?.password !== signInDto.password) {
       throw new UnauthorizedException();
     }
     const payload = { user };
+    const token = await this.jwtService.signAsync(payload);
+
+    response.cookie('Authorization', token, {
+      httpOnly: true,
+      // secure: false,
+      // expires: 3500,
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+      domain: 'localhost',
+      // sameSite: 'none',
+    });
+
     return {
-      access_token: await this.jwtService.signAsync(payload),
+      access_token: token,
+      userId: user.id,
     };
   }
 
